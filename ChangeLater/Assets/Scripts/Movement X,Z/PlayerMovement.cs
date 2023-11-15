@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,9 +9,6 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed;
 
     public Transform orientation;
-    public InputAction Keyboard_I;
-    public InputAction Jump_Key;
-
 
     float horizontalInput;
     float verticalInput;
@@ -34,9 +32,10 @@ public class PlayerMovement : MonoBehaviour
     {
         MovePlayer();
     }
+    
     private void MyInput()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontial");
+        horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
     }
 
@@ -48,4 +47,3 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
     }
 }
-w
